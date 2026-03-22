@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "275667875379",
+    "project_id": "accisense",
+    "storage_bucket": "accisense.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:275667875379:android:ee8f3ef3f7c38368e39546",
+        "android_client_info": {
+          "package_name": "com.example.accisense"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlJ4LDP-aa0q_0qjL4itxpEqfofsWGLGI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

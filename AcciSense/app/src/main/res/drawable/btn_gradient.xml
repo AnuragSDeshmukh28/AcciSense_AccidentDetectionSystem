@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- The Gradient Color Logic -->
+    <gradient
+        android:startColor="#1A237E"
+        android:endColor="#3949AB"
+        android:angle="45"
+        android:type="linear" />
+
+    <!-- Rounded Corners -->
+    <corners android:radius="12dp" />
+
+    <!-- Optional: Padding to keep text away from edges -->
+    <padding
+        android:left="10dp"
+        android:top="10dp"
+        android:right="10dp"
+        android:bottom="10dp" />
+
+</shape>

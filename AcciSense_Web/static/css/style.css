@@ -1,0 +1,105 @@
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f4f6fb;
+}
+
+.header{
+    background: linear-gradient(135deg,#1b3c73,#4a6cf7);
+    color:white;
+    text-align:center;
+    padding:35px 20px;
+    font-size:26px;
+    font-weight:bold;
+}
+
+.container{
+    padding:20px;
+    max-width:420px;
+    margin:auto;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.15);
+    padding:25px;
+    margin-top:-40px;
+}
+
+.profile{
+    width:90px;
+    height:90px;
+    background:#e6ecff;
+    border-radius:50%;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:36px;
+    color:#1b3c73;
+    font-weight:bold;
+}
+
+.title{
+    text-align:center;
+    font-size:20px;
+    margin-top:10px;
+    color:#1b3c73;
+    font-weight:bold;
+}
+
+.info{
+    margin-top:20px;
+    font-size:16px;
+    color:#444;
+}
+
+.info p{
+    margin:8px 0;
+}
+
+.btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:8px;
+    margin-top:15px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.call{
+    background:#ff4d4d;
+    color:white;
+}
+
+.map{
+    background:#1b3c73;
+    color:white;
+}
+
+.notify{
+    background:#4CAF50;
+    color:white;
+}
+
+.report{
+    background:#FF9800;
+    color:white;
+}
+
+.footer{
+    text-align:center;
+    font-size:12px;
+    margin-top:20px;
+    color:#777;
+}
+
+#map{
+    width:100%;
+    height:300px;
+    margin-top:20px;
+    border-radius:15px;
+    overflow:hidden;
+}
