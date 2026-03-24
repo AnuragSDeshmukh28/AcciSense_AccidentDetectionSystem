@@ -12,6 +12,10 @@ model = pickle.load(open("accident_model.pkl", "rb"))
 def home():
     return "Server is working"
 
+@app.route('/driver')
+def driver():
+    return render_template('driver.html')
+
 # ✅ PREDICT ROUTE
 @app.route("/predict", methods=["POST"])
 @app.route("/predict", methods=["POST"])
