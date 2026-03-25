@@ -133,7 +133,7 @@ public class Home extends AppCompatActivity implements SensorEventListener {
     private void generateQR(String uid) {
 
         try {
-            String qrData = "https://anuragsdeshmukh28.github.io/AcciSense_AccidentDetectionSystem/AcciSense_Web/driver.html?id=" + uid;
+            String qrData = "https://anuragsdeshmukh28.github.io/AcciSense_AccidentDetectionSystem/AcciSense_Web/templates/driver?id=" + uid;
 
             BarcodeEncoder encoder = new BarcodeEncoder();
             Bitmap bitmap = encoder.encodeBitmap(qrData, BarcodeFormat.QR_CODE, 400, 400);
