@@ -16,9 +16,16 @@ def home():
 # ✅ DRIVER PAGE (QR PAGE)
 @app.route('/driver')
 def driver():
-    user_id = request.args.get('id')   # 👈 get ID from QR
-    return render_template('driver.html', user_id=user_id)
+    user_id = request.args.get('id')
 
+    # TEMP DATA (for testing)
+    user_data = {
+        "name": "Anurag",
+        "phone": "9876543210",
+        "blood": "O+"
+    }
+
+    return render_template('driver.html', user=user_data, user_id=user_id)
 # ✅ PREDICT ROUTE (IMPORTANT)
 @app.route("/predict", methods=["POST"])
 def predict():
