@@ -1,34 +1,37 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import pickle
-from flask import Flask, render_template
 import numpy as np
+import os
 
 app = Flask(__name__)
 
 # ✅ Load trained ML model
 model = pickle.load(open("accident_model.pkl", "rb"))
 
-# ✅ HOME ROUTE (IMPORTANT for testing)
+# ✅ HOME ROUTE
 @app.route("/")
 def home():
-    return "Server is working"
+    return "Server is working 🚀"
 
+# ✅ DRIVER PAGE (QR PAGE)
 @app.route('/driver')
 def driver():
-    return render_template('driver.html')
+    user_id = request.args.get('id')   # 👈 get ID from QR
+    return render_template('driver.html', user_id=user_id)
 
-# ✅ PREDICT ROUTE
-@app.route("/predict", methods=["POST"])
+# ✅ PREDICT ROUTE (IMPORTANT)
 @app.route("/predict", methods=["POST"])
 def predict():
-
     try:
-        accX = float(request.form.get("accX"))
-        accY = float(request.form.get("accY"))
-        accZ = float(request.form.get("accZ"))
-        gyroX = float(request.form.get("gyroX"))
-        gyroY = float(request.form.get("gyroY"))
-        gyroZ = float(request.form.get("gyroZ"))
+        # ✅ Support BOTH JSON and FORM (important for Android)
+        data = request.get_json() or request.form
+
+        accX = float(data.get("accX"))
+        accY = float(data.get("accY"))
+        accZ = float(data.get("accZ"))
+        gyroX = float(data.get("gyroX"))
+        gyroY = float(data.get("gyroY"))
+        gyroZ = float(data.get("gyroZ"))
 
         print("📥 Received:", accX, accY, accZ, gyroX, gyroY, gyroZ)
 
@@ -46,8 +49,7 @@ def predict():
     except Exception as e:
         print("❌ ERROR:", e)
         return jsonify({"result": "Error"})
-    
-    
-# ✅ RUN SERVER
+
+# ✅ IMPORTANT FOR RENDER
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)  
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
