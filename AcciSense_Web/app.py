@@ -25,7 +25,7 @@ def driver():
         "blood": "O+"
     }
 
-    return render_template('driver.html', user=user_data, user_id=user_id)
+    return render_template('driver.html', user_id=user_id)
 # ✅ PREDICT ROUTE (IMPORTANT)
 @app.route("/predict", methods=["POST"])
 def predict():
